@@ -1,27 +1,47 @@
-// vc17.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Main.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
-#include "SDL.h"
+#include "../2D_GameEngine/Game.h"
+
+Game *game = nullptr;
 
 int main(int argc, char* argv[])
 {
-    std::cout << "Hello World!\n";
-	SDL_Init(SDL_INIT_EVERYTHING);
-	SDL_Window* window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-		600, 400, SDL_WINDOW_SHOWN);
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
-
-	SDL_SetRenderDrawColor(renderer, 255, 255, 0, 0);
+	game = new Game();
+	game->init("Shi Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+		800, 600, false);
 	
-	SDL_RenderClear(renderer);
+	while (game->running())
+	{
+		game->handleEvents();
+		game->update();
+		game->render();
+	}
 
-	SDL_RenderPresent(renderer);
-
-	SDL_Delay(5000);
+	game->clean();
 
 	return EXIT_SUCCESS;
 }
+
+
+//int main(int argc, char* argv[])
+//{
+//    std::cout << "Hello World!\n";
+//	SDL_Init(SDL_INIT_EVERYTHING);
+//	SDL_Window* window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+//		600, 400, SDL_WINDOW_SHOWN);
+//	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+//
+//	SDL_SetRenderDrawColor(renderer, 255, 255, 0, 0);
+//	
+//	SDL_RenderClear(renderer);
+//
+//	SDL_RenderPresent(renderer);
+//
+//	SDL_Delay(5000);
+//
+//	return EXIT_SUCCESS;
+//}
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu

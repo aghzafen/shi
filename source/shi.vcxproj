@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="2D_GameEngine\Game.cpp" />
     <ClCompile Include="main\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2D_GameEngine\Game.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
