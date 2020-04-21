@@ -20,10 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2D_GameEngine\Game.cpp" />
+    <ClCompile Include="2D_GameEngine\GameObject.cpp" />
+    <ClCompile Include="2D_GameEngine\TextureManager.cpp" />
     <ClCompile Include="main\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2D_GameEngine\Game.h" />
+    <ClInclude Include="2D_GameEngine\GameObject.h" />
+    <ClInclude Include="2D_GameEngine\TextureManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

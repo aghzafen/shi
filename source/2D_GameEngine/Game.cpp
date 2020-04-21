@@ -1,7 +1,8 @@
 #include "Game.h"
+#include "TextureManager.h"
+#include "GameObject.h"
 
-SDL_Texture *player;
-SDL_Rect srcR, destR;
+GameObject* player;
 
 Game::Game()
 {
@@ -13,7 +14,7 @@ Game::~Game()
 
 }
 
-bool Game::init(const char *title, int w, int h, bool fullscreen)
+bool Game::init(const char* title, int w, int h, bool fullscreen)
 {
 	int flags = 0;
 	if (fullscreen)
@@ -47,9 +48,7 @@ bool Game::init(const char *title, int w, int h, bool fullscreen)
 		isRunning = false;
 	}
 
-	SDL_Surface *surface = IMG_Load("assets/pipi.png");
-	player = SDL_CreateTextureFromSurface(renderer, surface);
-	// ToDo: free surface?
+	player = new GameObject("assets/pipi.png", renderer, 0, 0);
 
 	return isRunning;
 }
@@ -76,16 +75,13 @@ void Game::update()
 	std::cout << "counter: " << counter << std::endl;
 #endif // _DEBUG
 
-	destR.w = 128;
-	destR.h = 128;
-
-	destR.x = counter%800;
+	player->update();
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, player, NULL, &destR);
+	player->render();
 	SDL_RenderPresent(renderer);
 }
 

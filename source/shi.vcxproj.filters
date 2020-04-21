@@ -21,9 +21,21 @@
     <ClCompile Include="2D_GameEngine\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="2D_GameEngine\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2D_GameEngine\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2D_GameEngine\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="2D_GameEngine\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="2D_GameEngine\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

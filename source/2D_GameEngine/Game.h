@@ -22,7 +22,7 @@ public:
 private:
 	uint64_t counter = 0L;
 	bool isRunning;
-	SDL_Window *window;
-	SDL_Renderer *renderer;
+	SDL_Window* window;
+	SDL_Renderer* renderer;
 
 };
