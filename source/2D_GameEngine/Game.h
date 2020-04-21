@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SDL.h"
+#include "SDL_image.h"
 #include <iostream>
 
 class Game
@@ -9,7 +10,7 @@ public:
 	Game();
 	~Game();
 
-	bool init(const char* title, int x, int y, int w, int h, bool fullscreen);
+	bool init(const char* title, int w, int h, bool fullscreen);
 
 	void handleEvents();
 	void update();
@@ -19,6 +20,7 @@ public:
 	bool running() { return isRunning; }
 
 private:
+	uint64_t counter = 0L;
 	bool isRunning;
 	SDL_Window *window;
 	SDL_Renderer *renderer;
